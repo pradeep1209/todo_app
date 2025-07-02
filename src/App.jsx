@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Button from './components/Button';
 
 function App() {
   const [todo, setTodo] = useState('');
@@ -66,9 +67,9 @@ function App() {
           <>
             <button className="clear-btn" onClick={clearAll}>Clear All</button>
             <div className="filter-btns">
-              <button onClick={() => setFilter('all')} className={filter === 'all' ? 'active' : ''}>All</button>
-              <button onClick={() => setFilter('completed')} className={filter === 'completed' ? 'active' : ''}>Completed</button>
-              <button onClick={() => setFilter('pending')} className={filter === 'pending' ? 'active' : ''}>Pending</button>
+              <Button onClick={() => setFilter('all')} buttonStyle={filter === 'all' ? 'active' : ''}>All</Button>
+              <Button onClick={() => setFilter('completed')} buttonStyle={filter === 'completed' ? 'active' : ''}>Completed</Button>
+              <Button onClick={() => setFilter('pending')} buttonStyle={filter === 'pending' ? 'active' : ''}>Pending</Button>
             </div>
           </>
         )}
